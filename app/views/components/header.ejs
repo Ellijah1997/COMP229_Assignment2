@@ -1,0 +1,47 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="mainNav">
+  <link rel="stylesheet" href="../css/about.css">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/"></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link <%= (page == 'home') ? 'active' : ''; %>" aria-current="page" href="/home"><i class="fas fa-lg fa-laptop-house"></i> Home</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link <%= (page == 'about') ? 'active' : ''; %>" aria-current="page" href="/about"><i class="fa-solid fa-circle-info fa-lg"></i> About</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link <%= (page == 'projects') ? 'active' : ''; %>" aria-current="page" href="/projects"><i class="fa-solid fa-diagram-project fa-lg"></i> Projects</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link <%= (page == 'services') ? 'active' : ''; %>" aria-current="page" href="/services"><i class="fas fa-cogs"></i> Services</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link <%= (page == 'contact') ? 'active' : ''; %>" aria-current="page" href="/contact"><i class="fas fa-mobile-alt"></i> Contact Me</a>
+        </li> 
+
+        <li class="nav-item">
+          <a class="nav-link <%= (page == 'contact-list') ? 'active' : ''; %>" aria-current="page" href="/contact-list"><i class="fas fa-book"></i> Contact List</a>
+        </li> 
+
+        <% if(typeof displayName == 'string' && displayName) { %>
+          <li class="navbar-text"><i class="fas fa-lg fa-user"></i> Hello, <%= displayName %></li>
+          <li class="nav-item"><a href="/logout" class="nav-link">
+            <i class="fas fa-lg fa-sign-out-alt"></i> Logout</a></li>
+        <% } else { %>
+          <li class="nav-item"><a href="/login" class="nav-link">
+            <i class="fas fa-sign-in-alt"></i> Login</a></li>
+        <% } %>
+
+
+      </ul>
+    </div>
+  </div>
+</nav>
